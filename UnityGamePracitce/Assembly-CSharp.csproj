@@ -11,7 +11,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{6F5BB613-3285-5F17-CA51-8A93F42497BF}</ProjectGuid>
+    <ProjectGuid>{B0EAB90A-D919-6CF4-2766-2EC57BCBBE34}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -87,26 +87,6 @@
     <Compile Include="Assets\Scripts\BaseProLayout\UnFinishSystems\InteractSystem\InteractSlot.cs" />
     <Compile Include="Assets\Scripts\BaseProLayout\UnFinishSystems\InteractSystem\RayserUIsystem.cs" />
     <Compile Include="Assets\Scripts\BaseProLayout\UnFinishSystems\SimpleCameraController.cs" />
-    <Compile Include="Assets\Scripts\Oni-TapAct\DebugFunc\ClipboardHelper.cs" />
-    <Compile Include="Assets\Scripts\Oni-TapAct\DebugFunc\DebugPrint.cs" />
-    <Compile Include="Assets\Scripts\Oni-TapAct\DebugFunc\DebugWindow.cs" />
-    <Compile Include="Assets\Scripts\Oni-TapAct\GameFunc\AnimatedTextureExtendedUV.cs" />
-    <Compile Include="Assets\Scripts\Oni-TapAct\GameFunc\AttackColliderControl.cs" />
-    <Compile Include="Assets\Scripts\Oni-TapAct\GameFunc\CameraControl.cs" />
-    <Compile Include="Assets\Scripts\Oni-TapAct\GameFunc\FadeControl.cs" />
-    <Compile Include="Assets\Scripts\Oni-TapAct\GameFunc\FloorControl.cs" />
-    <Compile Include="Assets\Scripts\Oni-TapAct\GameFunc\GUIControl.cs" />
-    <Compile Include="Assets\Scripts\Oni-TapAct\GameFunc\LevelControl.cs" />
-    <Compile Include="Assets\Scripts\Oni-TapAct\GameFunc\OniControl.cs" />
-    <Compile Include="Assets\Scripts\Oni-TapAct\GameFunc\OniEmitterControl.cs" />
-    <Compile Include="Assets\Scripts\Oni-TapAct\GameFunc\OniGroupControl.cs" />
-    <Compile Include="Assets\Scripts\Oni-TapAct\GameFunc\OniStillBodyControl.cs" />
-    <Compile Include="Assets\Scripts\Oni-TapAct\GameFunc\PlayerControl.cs" />
-    <Compile Include="Assets\Scripts\Oni-TapAct\GameFunc\RankDisp.cs" />
-    <Compile Include="Assets\Scripts\Oni-TapAct\GameFunc\ResultControl.cs" />
-    <Compile Include="Assets\Scripts\Oni-TapAct\GameFunc\SceneControl.cs" />
-    <Compile Include="Assets\Scripts\Oni-TapAct\GameFunc\ScoreControl.cs" />
-    <Compile Include="Assets\Scripts\Oni-TapAct\GameFunc\TitleSceneControl.cs" />
     <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
     <Reference Include="UnityEngine">
       <HintPath>D:/GameMake/Unity/2019.4.4/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
@@ -652,61 +632,61 @@
       <HintPath>D:/GameMake/Unity/2019.4.4/Unity/Editor/Data/MonoBleedingEdge/lib/mono/unityscript/Boo.Lang.dll</HintPath>
     </Reference>
     <Reference Include="Unity.RenderPipeline.Universal.ShaderLibrary">
-      <HintPath>D:/test program/UNITYLearning/UnityGamePracite/Library/ScriptAssemblies/Unity.RenderPipeline.Universal.ShaderLibrary.dll</HintPath>
+      <HintPath>D:/Respository/UnityGamePractice/UnityGamePracitce/Library/ScriptAssemblies/Unity.RenderPipeline.Universal.ShaderLibrary.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline.Editor">
-      <HintPath>D:/test program/UNITYLearning/UnityGamePracite/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
+      <HintPath>D:/Respository/UnityGamePractice/UnityGamePracitce/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.RenderPipelines.Universal.Shaders">
-      <HintPath>D:/test program/UNITYLearning/UnityGamePracite/Library/ScriptAssemblies/Unity.RenderPipelines.Universal.Shaders.dll</HintPath>
+      <HintPath>D:/Respository/UnityGamePractice/UnityGamePracitce/Library/ScriptAssemblies/Unity.RenderPipelines.Universal.Shaders.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VSCode.Editor">
-      <HintPath>D:/test program/UNITYLearning/UnityGamePracite/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
+      <HintPath>D:/Respository/UnityGamePractice/UnityGamePracitce/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.RenderPipelines.Core.Editor">
-      <HintPath>D:/test program/UNITYLearning/UnityGamePracite/Library/ScriptAssemblies/Unity.RenderPipelines.Core.Editor.dll</HintPath>
+      <HintPath>D:/Respository/UnityGamePractice/UnityGamePracitce/Library/ScriptAssemblies/Unity.RenderPipelines.Core.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.RenderPipelines.Core.Runtime">
-      <HintPath>D:/test program/UNITYLearning/UnityGamePracite/Library/ScriptAssemblies/Unity.RenderPipelines.Core.Runtime.dll</HintPath>
+      <HintPath>D:/Respository/UnityGamePractice/UnityGamePracitce/Library/ScriptAssemblies/Unity.RenderPipelines.Core.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>D:/test program/UNITYLearning/UnityGamePracite/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+      <HintPath>D:/Respository/UnityGamePractice/UnityGamePracitce/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.RenderPipelines.Universal.Runtime">
-      <HintPath>D:/test program/UNITYLearning/UnityGamePracite/Library/ScriptAssemblies/Unity.RenderPipelines.Universal.Runtime.dll</HintPath>
+      <HintPath>D:/Respository/UnityGamePractice/UnityGamePracitce/Library/ScriptAssemblies/Unity.RenderPipelines.Universal.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="Unity.RenderPipelines.Universal.Editor">
-      <HintPath>D:/test program/UNITYLearning/UnityGamePracite/Library/ScriptAssemblies/Unity.RenderPipelines.Universal.Editor.dll</HintPath>
+      <HintPath>D:/Respository/UnityGamePractice/UnityGamePracitce/Library/ScriptAssemblies/Unity.RenderPipelines.Universal.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UI">
-      <HintPath>D:/test program/UNITYLearning/UnityGamePracite/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
+      <HintPath>D:/Respository/UnityGamePractice/UnityGamePracitce/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline">
-      <HintPath>D:/test program/UNITYLearning/UnityGamePracite/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
+      <HintPath>D:/Respository/UnityGamePractice/UnityGamePracitce/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
     </Reference>
     <Reference Include="Unity.CollabProxy.Editor">
-      <HintPath>D:/test program/UNITYLearning/UnityGamePracite/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
+      <HintPath>D:/Respository/UnityGamePractice/UnityGamePracitce/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.AssetBundleBrowser.Editor">
-      <HintPath>D:/test program/UNITYLearning/UnityGamePracite/Library/ScriptAssemblies/Unity.AssetBundleBrowser.Editor.dll</HintPath>
+      <HintPath>D:/Respository/UnityGamePractice/UnityGamePracitce/Library/ScriptAssemblies/Unity.AssetBundleBrowser.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Rider.Editor">
-      <HintPath>D:/test program/UNITYLearning/UnityGamePracite/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
+      <HintPath>D:/Respository/UnityGamePractice/UnityGamePracitce/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary">
-      <HintPath>D:/test program/UNITYLearning/UnityGamePracite/Library/ScriptAssemblies/Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.dll</HintPath>
+      <HintPath>D:/Respository/UnityGamePractice/UnityGamePracitce/Library/ScriptAssemblies/Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.dll</HintPath>
     </Reference>
     <Reference Include="Unity.ShaderGraph.Editor">
-      <HintPath>D:/test program/UNITYLearning/UnityGamePracite/Library/ScriptAssemblies/Unity.ShaderGraph.Editor.dll</HintPath>
+      <HintPath>D:/Respository/UnityGamePractice/UnityGamePracitce/Library/ScriptAssemblies/Unity.ShaderGraph.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.RenderPipelines.Core.ShaderLibrary">
-      <HintPath>D:/test program/UNITYLearning/UnityGamePracite/Library/ScriptAssemblies/Unity.RenderPipelines.Core.ShaderLibrary.dll</HintPath>
+      <HintPath>D:/Respository/UnityGamePractice/UnityGamePracitce/Library/ScriptAssemblies/Unity.RenderPipelines.Core.ShaderLibrary.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
-      <HintPath>D:/test program/UNITYLearning/UnityGamePracite/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+      <HintPath>D:/Respository/UnityGamePractice/UnityGamePracitce/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.UI">
-      <HintPath>D:/test program/UNITYLearning/UnityGamePracite/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+      <HintPath>D:/Respository/UnityGamePractice/UnityGamePracitce/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup></ItemGroup>
