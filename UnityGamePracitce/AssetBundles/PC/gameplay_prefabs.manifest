@@ -1,0 +1,49 @@
+ManifestFileVersion: 0
+CRC: 97789120
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 7f9181b00561f269e4146ea4a594b0b1
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 3a5fe36fdef12af0fa6af1c1d28cd6a0
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 23
+  Script: {instanceID: 0}
+- Class: 33
+  Script: {instanceID: 0}
+- Class: 43
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+- Class: 54
+  Script: {instanceID: 0}
+- Class: 65
+  Script: {instanceID: 0}
+- Class: 114
+  Script: {fileID: 11500000, guid: f2aa1320d42182744bd79c0f239689c3, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 72251d53f75ae6744a4e9ba4634a8d61, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 4269fca36276ce343afa050ffa17d299, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: eff0448da9ace2646bbc73c954c77ba6, type: 3}
+- Class: 115
+  Script: {instanceID: 0}
+- Class: 135
+  Script: {instanceID: 0}
+- Class: 136
+  Script: {instanceID: 0}
+Assets:
+- Assets/Resources/Prefabs/ShootBall.prefab
+- Assets/Resources/Prefabs/Brick_Ice.prefab
+- Assets/Resources/Prefabs/MoveBar.prefab
+- Assets/Resources/Prefabs/Brick_Basic.prefab
+Dependencies: []
