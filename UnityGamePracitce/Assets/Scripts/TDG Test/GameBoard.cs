@@ -12,7 +12,11 @@ namespace TDG_game {
         [SerializeField]
         GameTile tilePrefab = default;
 
+        GameTile[] tiles;
+
         Vector2Int size;
+
+        Queue<GameTile> searchFrontier = new Queue<GameTile>();
 
         public void Initialize(Vector2Int size)
         {
@@ -21,16 +25,57 @@ namespace TDG_game {
 
             Vector2 offset = new Vector2(   (size.x - 1) * 0.5f, (size.y - 1) * 0.5f   );
 
-            for (int y = 0; y < size.y; y++)
+            tiles = new GameTile[size.x * size.y];
+
+            for (int i = 0, y = 0; y < size.y; y++)
             {
-                for (int x = 0; x < size.x; x++)
+                for (int x = 0; x < size.x; x++, i++)
                 {
-                    GameTile tile = Instantiate(tilePrefab);
+                    GameTile tile = tiles[i] = Instantiate(tilePrefab);
                     tile.transform.SetParent(transform, false);
                     tile.transform.localPosition = new Vector3(
                         x - offset.x, 0.01f, y - offset.y
                     );
+
+                    if (x > 0)
+                    {
+                        GameTile.MakeEastWestNeighbors(tile, tiles[i - 1]);
+                    }
+                    if (y > 0)
+                    {
+                        GameTile.MakeNorthSouthNeighbors(tile, tiles[i - size.x]);
+                    }
                 }
+            }
+
+            FindPaths();
+        }
+
+        void FindPaths()
+        {
+            foreach (GameTile tile in tiles)
+            {
+                tile.ClearPath();
+            }
+            //从目的地出发开始遍历
+            tiles[0].BecomeDestination();
+            searchFrontier.Enqueue(tiles[0]);
+
+            while (searchFrontier.Count > 0)
+            {
+                GameTile tile = searchFrontier.Dequeue();
+                if (tile != null)
+                {
+                    searchFrontier.Enqueue(tile.GrowPathNorth());
+                    searchFrontier.Enqueue(tile.GrowPathEast());
+                    searchFrontier.Enqueue(tile.GrowPathSouth());
+                    searchFrontier.Enqueue(tile.GrowPathWest());
+                }
+            }
+
+            foreach (GameTile tile in tiles)
+            {
+                tile.ShowPath();
             }
         }
     }
