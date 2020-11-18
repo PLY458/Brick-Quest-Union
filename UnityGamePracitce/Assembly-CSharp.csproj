@@ -87,6 +87,9 @@
     <Compile Include="Assets\Scripts\BaseProLayout\UnFinishSystems\InteractSystem\InteractSlot.cs" />
     <Compile Include="Assets\Scripts\BaseProLayout\UnFinishSystems\InteractSystem\RayserUIsystem.cs" />
     <Compile Include="Assets\Scripts\BaseProLayout\UnFinishSystems\SimpleCameraController.cs" />
+    <Compile Include="Assets\Scripts\TDG Test\GameBoard.cs" />
+    <Compile Include="Assets\Scripts\TDG Test\GameMgr.cs" />
+    <Compile Include="Assets\Scripts\TDG Test\GameTile.cs" />
     <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
     <Reference Include="UnityEngine">
       <HintPath>D:/GameMake/Unity/2019.4.4/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
