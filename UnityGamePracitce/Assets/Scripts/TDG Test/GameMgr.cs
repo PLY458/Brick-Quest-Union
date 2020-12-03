@@ -7,34 +7,52 @@ namespace TDG_game
 {
         public class GameMgr : MonoBehaviour
     {
+        /// <summary>
+        /// 塔防地图的尺寸
+        /// </summary>
         [SerializeField]
         Vector2Int boardSize = new Vector2Int(11, 11);
 
+        /// <summary>
+        /// 敌人的生成速度
+        /// </summary>
+        [SerializeField, Range(0.1f, 10f)]
+        float spawnSpeed = 1f;
+
+        /// <summary>
+        /// 敌人生产间隔计时器
+        /// </summary>
+        float spawnProgress;
+
+        /// <summary>
+        /// 定位导航点转换位置的摄像机射线
+        /// </summary>
+        Ray TouchRay => Camera.main.ScreenPointToRay(Input.mousePosition);
+
+        #region 游戏场景中调用的游戏物体
         [SerializeField]
-        GameBoard board = default;
+        NaviBoard board = default;
 
         [SerializeField]
-        GameTileContentFactory tileContentFactory = default;
+        NaviTileContentFactory tileContentFactory = default;
 
         [SerializeField]
         EnemyFactory enemyFactory = default;
 
-        [SerializeField, Range(0.1f, 10f)]
-        float spawnSpeed = 1f;
-
-        //敌人集合体管理器
         EnemyCollection enemies = new EnemyCollection();
+        #endregion
 
-        //敌人生成间隔计时器
-        float spawnProgress;
-
-        Ray TouchRay => Camera.main.ScreenPointToRay(Input.mousePosition);
-
+        #region 游戏生命周期
         void Awake()
         {
             board.Initialize(boardSize,tileContentFactory);
+            board.ShowPaths = !board.ShowPaths;//测试调换
         }
 
+        /// <summary>
+        /// 限定地图尺寸的大小 
+        /// - 知识点待整备
+        /// </summary>
         void OnValidate()
         {
             if (boardSize.x < 2)
@@ -49,6 +67,7 @@ namespace TDG_game
 
         void Update()
         {
+
             if (Input.GetMouseButtonDown(0))
             {
                 HandleTouch();
@@ -58,10 +77,10 @@ namespace TDG_game
                 HandleAlternativeTouch();
             }
 
-            if (Input.GetKeyDown(KeyCode.V))
-            {
-                board.ShowPaths = !board.ShowPaths;
-            }
+            //if (Input.GetKeyDown(KeyCode.V))
+            //{
+            //    board.ShowPaths = !board.ShowPaths;
+            //}
 
             spawnProgress += spawnSpeed * Time.deltaTime;
             while (spawnProgress >= 1f)
@@ -73,12 +92,15 @@ namespace TDG_game
             enemies.CollectionUpdate();
         }
 
+        #endregion
+
+        #region 游戏操作方法
         /// <summary>
-        /// 副位操作
+        /// 鼠标左键操作方法
         /// </summary>
         void HandleAlternativeTouch()
         {
-            GameTile tile = board.GetTile(TouchRay);
+            NaviTile tile = board.GetNaviTile(TouchRay);
             if (tile != null) {
                 if (Input.GetKey(KeyCode.LeftShift))
                 {
@@ -92,11 +114,11 @@ namespace TDG_game
         }
 
         /// <summary>
-        /// 主位操作
+        /// 鼠标右键操作方法
         /// </summary>
         void HandleTouch()
         {
-            GameTile tile = board.GetTile(TouchRay);
+            NaviTile tile = board.GetNaviTile(TouchRay);
             if (tile != null)
             {
                 //tile.Content =
@@ -105,12 +127,19 @@ namespace TDG_game
             }
         }
 
+        #endregion
+
+        /// <summary>
+        /// 敌人生成唤醒
+        /// </summary>
         void SpawnEnemy()
         {
-            GameTile spawnPoint =
+            //随机抽取场上的生成点
+            NaviTile spawnPoint =
                 board.GetSpawnPoint(Random.Range(0, board.SpawnPointCount));
+            //生成敌人在抽到的生成点上
             Enemy enemy = enemyFactory.GetEnemy();
-            enemy.SpawnOn(spawnPoint);
+            enemy.SetSpownPoint(spawnPoint);
 
             enemies.Add(enemy);
         }

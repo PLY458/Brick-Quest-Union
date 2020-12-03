@@ -20,13 +20,7 @@ namespace TDG_game
         None, TurnRight, TurnLeft, TurnAround
     }
 
-    /// <summary>
-    /// 寻路点的类型区别
-    /// </summary>
-    public enum GameTileContentType
-    {
-        Empty, Destination, Wall, SpawnPoint
-    }
+
 
     /// <summary>
     /// 游戏物体转向扩展类
@@ -48,7 +42,7 @@ namespace TDG_game
         };
 
         /// <summary>
-        /// 敌人圆滑位移需要的向量参数
+        /// 四个方向向量折半计算
         /// </summary>
         static Vector3[] halfVectors = {
         Vector3.forward * 0.5f,
@@ -69,7 +63,8 @@ namespace TDG_game
         /// <summary>
         /// 敌人单位旋转方向确认
         /// </summary>
-        public static DirectionTurnTo GetDirectionChangeTo(this Direction current, Direction next)
+        public static DirectionTurnTo GetDirectionChangeTo(
+            this Direction current, Direction next)
         {
             //当前方向与下一个瓦片的方向相同，无需变化
             if (current == next)

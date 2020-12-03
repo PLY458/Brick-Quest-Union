@@ -12,9 +12,13 @@ namespace TDG_game
             enemies.Add(enemy);
         }
 
+        /// <summary>
+        /// 遍历唤醒集合中的敌人的行动更新
+        /// </summary>
         public void CollectionUpdate() {
             for (int i = 0; i < enemies.Count; i++)
             {
+                //如果集合中有敌人行为更新失败，则调度末尾的单位到该敌人位置上来
                 if (!enemies[i].EnemyUpdate())
                 {
                     int lastIndex = enemies.Count - 1;

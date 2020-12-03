@@ -369,11 +369,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 404f2d1b1dd828946b417d043d3fc9aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  boardSize: {x: 11, y: 11}
+  boardSize: {x: 9, y: 9}
+  spawnSpeed: 0.4
   board: {fileID: 1827494966}
-  tileContentFactory: {fileID: 11400000, guid: 1e7e180b118379c40a5ff315408153f0, type: 2}
+  tileContentFactory: {fileID: 11400000, guid: 5b9f31b251ee4864d9da387c48eddd2d, type: 2}
   enemyFactory: {fileID: 11400000, guid: a90d2fa60ffdf1a438a8642698b873e9, type: 2}
-  spawnSpeed: 1
 --- !u!4 &2122721979
 Transform:
   m_ObjectHideFlags: 0

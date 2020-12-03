@@ -44,10 +44,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 783551ef9ff8586499ca9b8ee1893bd4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ground: {fileID: 1389231307169127311}
+  buildOrigin: {fileID: 1389231307169127311}
   tilePrefab: {fileID: 8069886328453946224, guid: 6dfe485c4cb52b64c804e2b3669603c2,
     type: 3}
-  gridTexture: {fileID: 2800000, guid: 11b450bd34b6f9c41909e1d4ed4ba9c7, type: 3}
 --- !u!1 &1389231307169127347
 GameObject:
   m_ObjectHideFlags: 0
