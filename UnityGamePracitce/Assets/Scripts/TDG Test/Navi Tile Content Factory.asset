@@ -12,11 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ebdbf8aa25ff5c64791cbf92c9d9aaa2, type: 3}
   m_Name: Navi Tile Content Factory
   m_EditorClassIdentifier: 
-  destinationPrefab: {fileID: 6100397882280161554, guid: ecc0e50fe6091fe4e891800e17ffeced,
+  destinationPrefab: {fileID: 948075508484048722, guid: ecc0e50fe6091fe4e891800e17ffeced,
     type: 3}
-  emptyPrefab: {fileID: 1078287037677513821, guid: f8e7a86ee8b46c74f928197192b7b396,
+  emptyPrefab: {fileID: 305207305306802185, guid: f8e7a86ee8b46c74f928197192b7b396,
     type: 3}
-  wallPrefab: {fileID: 5761739390943428696, guid: 6e280298eef198a4fa16cd3d689ba7c9,
+  wallPrefab: {fileID: 2148451846014385339, guid: 6e280298eef198a4fa16cd3d689ba7c9,
     type: 3}
-  spawnPointPrefab: {fileID: 1078287037677513821, guid: 8582ef7ec0c0dd245936e389a9be0c4f,
+  spawnPointPrefab: {fileID: 1818388684269106415, guid: 8582ef7ec0c0dd245936e389a9be0c4f,
     type: 3}
+  towerPrefabs:
+  - {fileID: 6721093747613987556, guid: a9e42da973d4eab43a70c0337597ba3a, type: 3}
+  - {fileID: 7695924877873660557, guid: 4fa2e25a8823cf04381407c289544bf5, type: 3}

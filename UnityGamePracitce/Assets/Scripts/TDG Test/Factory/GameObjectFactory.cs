@@ -7,28 +7,35 @@ using UnityEngine.SceneManagement;
 /// </summary>
 public abstract class GameObjectFactory : ScriptableObject
 {
+    /// <summary>
+    /// 工厂所处的场景
+    /// </summary>
+    Scene factoryScence;
 
-    Scene scene;
-
+    /// <summary>
+    /// 根据预制体实例化游戏物体
+    /// </summary>
     protected T CreateGameObjectInstance<T>(T prefab) where T : MonoBehaviour
     {
-        if (!scene.isLoaded)
+        if (!factoryScence.isLoaded)
         {
             if (Application.isEditor)
             {
-                scene = SceneManager.GetSceneByName(name);
-                if (!scene.isLoaded)
+                factoryScence = SceneManager.GetSceneByName(name);
+                if (!factoryScence.isLoaded)
                 {
-                    scene = SceneManager.CreateScene(name);
+                    factoryScence = SceneManager.CreateScene(name);
                 }
             }
             else
             {
-                scene = SceneManager.CreateScene(name);
+                factoryScence = SceneManager.CreateScene(name);
             }
         }
         T instance = Instantiate(prefab);
-        SceneManager.MoveGameObjectToScene(instance.gameObject, scene);
+        //保证生产好的游戏物体放置在工厂场景中
+        SceneManager.MoveGameObjectToScene(instance.gameObject, factoryScence);
         return instance;
     }
+
 }

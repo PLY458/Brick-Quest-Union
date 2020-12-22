@@ -4,39 +4,71 @@ using System.Threading.Tasks;
 
 namespace TDG_game
 {
+    public enum EnemyType
+    {
+        Small, Medium, Large
+    }
+
+
     [CreateAssetMenu]
     public class EnemyFactory : GameObjectFactory
     {
 
-        [SerializeField]
-        Enemy prefab = default;
-
         /// <summary>
-        /// 敌人生产的初始速度区间
+        /// 敌人属性的配置信息表
         /// </summary>
-        [SerializeField, FRSlider(0.2f, 5f)]
-        FloatRange speed = new FloatRange(1f);
-
-        /// <summary>
-        /// 敌人生产的尺寸区间
-        /// </summary>
-        [SerializeField, FRSlider(0.5f, 2f)]
-        FloatRange scale = new FloatRange(1f);
-
-        /// <summary>
-        /// 敌人生产的路线偏移区间
-        /// </summary>
-        [SerializeField, FRSlider(-0.4f, 0.4f)]
-        FloatRange pathOffset = new FloatRange(0f);
-
-        public Enemy GetEnemy()
+        [System.Serializable]
+        class EnemyConfig
         {
-            Enemy instance = CreateGameObjectInstance(prefab);
+
+            public Enemy prefab = default;
+
+            [FRSlider(0.5f, 2f)]
+            public FloatRange scale = new FloatRange(1f);
+
+            [FRSlider(0.2f, 5f)]
+            public FloatRange speed = new FloatRange(1f);
+
+            [FRSlider(-0.4f, 0.4f)]
+            public FloatRange pathOffset = new FloatRange(0f);
+
+            [FRSlider(10f, 1000f)]
+            public FloatRange health = new FloatRange(100f);
+        }
+
+        /// <summary>
+        /// 三种敌人配置，小，中，大型敌人
+        /// </summary>
+        [SerializeField]
+        EnemyConfig small = default, medium = default, large = default;
+
+        /// <summary>
+        /// 获取敌人类型配置信息
+        /// </summary>
+        EnemyConfig GetConfig(EnemyType type)
+        {
+            switch (type)
+            {
+                case EnemyType.Small: return small;
+                case EnemyType.Medium: return medium;
+                case EnemyType.Large: return large;
+            }
+            Debug.Assert(false, "Unsupported enemy type!");
+            return null;
+        }
+
+
+        public Enemy GetEnemy(EnemyType type = EnemyType.Medium)
+        {
+            EnemyConfig config = GetConfig(type);
+            //考虑调用资源加载系统进行敌人生成位置管理
+            Enemy instance = CreateGameObjectInstance(config.prefab);
             instance.OriginFactory = this;
             instance.Initialize(
-                scale.RandomValueInRange,
-                pathOffset.RandomValueInRange,
-                speed.RandomValueInRange
+                config.scale.RandomValueInRange,
+                config.speed.RandomValueInRange,
+                config.pathOffset.RandomValueInRange,
+                config.health.RandomValueInRange
                 );
             return instance;
         }

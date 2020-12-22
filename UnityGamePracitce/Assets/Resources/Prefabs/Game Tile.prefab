@@ -88,7 +88,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8069886328453946191}
-  - component: {fileID: 8069886328453946224}
+  - component: {fileID: 9193907401322651867}
   m_Layer: 0
   m_Name: Game Tile
   m_TagString: Untagged
@@ -111,7 +111,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8069886328453946224
+--- !u!114 &9193907401322651867
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -120,7 +120,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 8069886328453946190}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 78208eef9316db5439e0c842a25b47fa, type: 3}
+  m_Script: {fileID: 11500000, guid: a47a63998ed04a447adf74006c4d1c60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   arrow: {fileID: 8069886328695551754}
