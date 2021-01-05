@@ -5,8 +5,8 @@ using System.Threading.Tasks;
 namespace TDG_game { 
 
     /// <summary>
-    /// 
-    /// 附加在：
+    /// 炮台瞄准检测的目标点
+    /// 附加在：敌人单位
     /// </summary>
     public class TargetPoint : MonoBehaviour
     {

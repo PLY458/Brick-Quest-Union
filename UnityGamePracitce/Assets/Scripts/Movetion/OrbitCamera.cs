@@ -70,10 +70,15 @@ public class OrbitCamera : MonoBehaviour
     /// </summary>
     Vector2 orbitAngles = new Vector2(45f, 45f);
 
+    Camera regularCamera;
+
+
+
     #region 生命周期
     void Awake()
     {
-        
+
+        regularCamera = GetComponent<Camera>();
         focusPoint = focus.position;
         transform.localRotation = Quaternion.Euler(orbitAngles);
     }
@@ -105,6 +110,23 @@ public class OrbitCamera : MonoBehaviour
         //结算更新摄像机位移情况
         Vector3 lookDirection = lookRotation * Vector3.forward;
         Vector3 lookPosition = focusPoint - lookDirection * distance;
+
+        //计算摄像机与场景的隔离情况
+        Vector3 rectOffset = lookDirection * regularCamera.nearClipPlane;
+        Vector3 rectPosition = lookPosition + rectOffset;
+        Vector3 castFrom = focus.position;
+        Vector3 castLine = rectPosition - castFrom;
+        float castDistance = castLine.magnitude;
+        Vector3 castDirection = castLine / castDistance;
+
+        if (Physics.BoxCast(
+            castFrom, CameraHalfExtends, castDirection, out RaycastHit hit,
+            lookRotation, castDistance))
+        {
+            rectPosition = castFrom + castDirection * hit.distance;
+            lookPosition = rectPosition - rectOffset;
+        }
+
         transform.SetPositionAndRotation(lookPosition, lookRotation);
     }
     #endregion
@@ -217,6 +239,22 @@ public class OrbitCamera : MonoBehaviour
         return true;
     }
 
+    /// <summary>
+    /// 
+    /// </summary>
+    Vector3 CameraHalfExtends
+    {
+        get
+        {
+            Vector3 halfExtends;
+            halfExtends.y =
+                regularCamera.nearClipPlane *
+                Mathf.Tan(0.5f * Mathf.Deg2Rad * regularCamera.fieldOfView);
+            halfExtends.x = halfExtends.y * regularCamera.aspect;
+            halfExtends.z = 0f;
+            return halfExtends;
+        }
+    }
 
     static float GetAngle(Vector2 direction)
     {

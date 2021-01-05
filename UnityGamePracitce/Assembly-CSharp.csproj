@@ -10,8 +10,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <RootNamespace>
-    </RootNamespace>
+    <RootNamespace></RootNamespace>
     <ProjectGuid>{B0EAB90A-D919-6CF4-2766-2EC57BCBBE34}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -90,7 +89,6 @@
     <Compile Include="Assets\Scripts\BaseProLayout\UnFinishSystems\SimpleCameraController.cs" />
     <Compile Include="Assets\Scripts\Movetion\MovingSphere.cs" />
     <Compile Include="Assets\Scripts\Movetion\OrbitCamera.cs" />
-    <Compile Include="Assets\Scripts\TDG Test\DirectionExtensions.cs" />
     <Compile Include="Assets\Scripts\TDG Test\Factory\EnemyFactory.cs" />
     <Compile Include="Assets\Scripts\TDG Test\Factory\GameObjectFactory.cs" />
     <Compile Include="Assets\Scripts\TDG Test\Factory\NaviTileContentFactory.cs" />
@@ -99,7 +97,6 @@
     <Compile Include="Assets\Scripts\TDG Test\FloatRanger\FRSliderDrawer.cs" />
     <Compile Include="Assets\Scripts\TDG Test\FloatRanger\FloatRange.cs" />
     <Compile Include="Assets\Scripts\TDG Test\GameMgr.cs" />
-    <Compile Include="Assets\Scripts\TDG Test\Object\Enemy\GameScenario.cs" />
     <Compile Include="Assets\Scripts\TDG Test\MonoPart\GameBehavior.cs" />
     <Compile Include="Assets\Scripts\TDG Test\MonoPart\GameBehaviorCollection.cs" />
     <Compile Include="Assets\Scripts\TDG Test\Object\Building\LaserTower.cs" />
@@ -109,10 +106,12 @@
     <Compile Include="Assets\Scripts\TDG Test\Object\Enemy\Enemy.cs" />
     <Compile Include="Assets\Scripts\TDG Test\Object\Enemy\EnemySpawnSequence.cs" />
     <Compile Include="Assets\Scripts\TDG Test\Object\Enemy\EnemyWave.cs" />
-    <Compile Include="Assets\Scripts\TDG Test\Object\Shell\Explosion.cs" />
+    <Compile Include="Assets\Scripts\TDG Test\Object\Enemy\GameScenario.cs" />
+    <Compile Include="Assets\Scripts\TDG Test\Object\NaviTile\DirectionExtensions.cs" />
     <Compile Include="Assets\Scripts\TDG Test\Object\NaviTile\NaviBoard.cs" />
     <Compile Include="Assets\Scripts\TDG Test\Object\NaviTile\NaviTile.cs" />
     <Compile Include="Assets\Scripts\TDG Test\Object\NaviTile\NaviTileContent.cs" />
+    <Compile Include="Assets\Scripts\TDG Test\Object\Shell\Explosion.cs" />
     <Compile Include="Assets\Scripts\TDG Test\Object\Shell\Shell.cs" />
     <Compile Include="Assets\Scripts\TDG Test\Object\Shell\WarEntity.cs" />
     <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
@@ -723,8 +722,7 @@
       <HintPath>D:/Respository/UnityGamePractice/UnityGamePracitce/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
     </Reference>
   </ItemGroup>
-  <ItemGroup>
-  </ItemGroup>
+  <ItemGroup></ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

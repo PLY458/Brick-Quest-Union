@@ -33,7 +33,7 @@ namespace TDG_game {
         void OnValidate()
         {
             //控制炮弹发射速度在可以显示的范围
-            float x = targetingRange;
+            float x = targetingRange + 0.25001f;
             float y = -mortar.position.y;
             launchSpeed = Mathf.Sqrt(9.81f * (y + Mathf.Sqrt(x * x + y * y)));
         }
@@ -90,25 +90,7 @@ namespace TDG_game {
                 shellBlastRadius, shellDamage
             );
 
-            Vector3 prev = launchPoint, next;
-            for (int i = 1; i <= 10; i++)
-            {
-                float t = i / 10f;
-                float dx = s * cosTheta * t;
-                float dy = s * sinTheta * t - 0.5f * g * t * t;
-                next = launchPoint + new Vector3(dir.x * dx, dy, dir.y * dx);
-                Debug.DrawLine(prev, next, Color.blue, 1f);
-                prev = next;
-            }
             #endregion
-
-            Debug.DrawLine(launchPoint, targetPoint, Color.yellow, 1f);
-            Debug.DrawLine(
-                    new Vector3(launchPoint.x, 0.01f, launchPoint.z),
-                    new Vector3(
-                            launchPoint.x + dir.x * x, 0.01f, launchPoint.z + dir.y * x
-            ),
-            Color.white, 1f);
 
 
         }

@@ -9,6 +9,9 @@ namespace TDG_game {
     {
         Vector3 launchPoint, targetPoint, launchVelocity;
 
+        /// <summary>
+        /// 炮弹生命周期，爆炸范围，炮弹伤害
+        /// </summary>
         float age, blastRadius, damage;
 
         public void Initialize(
@@ -28,22 +31,24 @@ namespace TDG_game {
             age += Time.deltaTime;
 
             //炮弹的位置移动
-            Vector3 p = launchPoint + launchVelocity * age;
-            p.y -= 0.5f * 9.81f * age * age;
+            Vector3 pos = launchPoint + launchVelocity * age;
+            pos.y -= 0.5f * 9.81f * age * age;
             //保证炮弹落地后消失
-            if (p.y <= 0f)
+            if (pos.y <= 0f)
             {
                 GameMgr.SpawnExplosion().Initialize(targetPoint, blastRadius, damage);
                 OriginFactory.Reclaim(this);
                 return false;
             }
-            transform.localPosition = p;
+            transform.localPosition = pos;
 
             //炮弹的旋转位移
             Vector3 d = launchVelocity;
             d.y -= 9.81f * age;
             transform.localRotation = Quaternion.LookRotation(d);
 
+            //小范围生成爆炸特效用于实现尾迹效果
+            GameMgr.SpawnExplosion().Initialize(pos, 0.1f);
             return true;
         }
 

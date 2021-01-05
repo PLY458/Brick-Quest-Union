@@ -140,7 +140,7 @@ namespace TDG_game {
             }
             spawnPoints.Clear();
             updatingContents.Clear();
-            ToggleDestination(tiles[tiles.Length / 2]);
+            ToggleDestination(tiles[tiles.Length-1]);
             ToggleSpawnPoint(tiles[0]);
         }
 

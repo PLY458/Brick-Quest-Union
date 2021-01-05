@@ -72,7 +72,7 @@ namespace TDG_game
         {
             playerHealth = startingPlayerHealth;
             board.Initialize(boardSize,tileContentFactory);
-            board.ShowPaths = !board.ShowPaths;//测试调换
+            board.ShowPaths = board.ShowPaths;//测试调换
             activeScenario = scenario.Begin();
         }
 
@@ -104,10 +104,10 @@ namespace TDG_game
                 HandleAlternativeTouch();
             }
 
-            //if (Input.GetKeyDown(KeyCode.V))
-            //{
-            //    board.ShowPaths = !board.ShowPaths;
-            //}
+            if (Input.GetKeyDown(KeyCode.V))
+            {
+                board.ShowPaths = !board.ShowPaths;
+            }
 
             if (Input.GetKeyDown(KeyCode.Alpha1))
             {

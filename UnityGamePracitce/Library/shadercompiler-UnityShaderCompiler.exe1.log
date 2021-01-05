@@ -1,2 +1,4 @@
 Base path: 'D:/GameMake/Unity/2019.4.4/Unity/Editor/Data', plugins path 'D:/GameMake/Unity/2019.4.4/Unity/Editor/Data/PlaybackEngines'
 Cmd: initializeCompiler
+Cmd: compileSnippet
+  api=4 type=0 insize=2205 outsize=1762 kw=_EMISSION _MAIN_LIGHT_SHADOWS _MAIN_LIGHT_SHADOWS_CASCADE _SHADOWS_SOFT pd=UNITY_NO_DXT5nm UNITY_ENABLE_REFLECTION_BUFFERS UNITY_NO_CUBEMAP_ARRAY UNITY_NO_SCREENSPACE_SHADOWS UNITY_PBS_USE_BRDF2 SHADER_API_DESKTOP UNITY_LIGHTMAP_FULL_HDR ok=1

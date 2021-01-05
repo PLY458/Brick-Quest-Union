@@ -369,12 +369,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 404f2d1b1dd828946b417d043d3fc9aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  boardSize: {x: 9, y: 9}
+  boardSize: {x: 15, y: 8}
   scenario: {fileID: 11400000, guid: 710824f900ac5f642b507e541ae60d99, type: 2}
   board: {fileID: 980840211}
   tileContentFactory: {fileID: 11400000, guid: 5b9f31b251ee4864d9da387c48eddd2d, type: 2}
   warFactory: {fileID: 11400000, guid: 6ed7223f22ffd9844b1762fad7539739, type: 2}
-  startingPlayerHealth: 100
+  startingPlayerHealth: 30
   playSpeed: 1
 --- !u!4 &2122721979
 Transform:

@@ -32,7 +32,7 @@ namespace TDG_game
             [FRSlider(-0.4f, 0.4f)]
             public FloatRange pathOffset = new FloatRange(0f);
 
-            [FRSlider(10f, 1000f)]
+            [FRSlider(10f, 250f)]
             public FloatRange health = new FloatRange(100f);
         }
 
