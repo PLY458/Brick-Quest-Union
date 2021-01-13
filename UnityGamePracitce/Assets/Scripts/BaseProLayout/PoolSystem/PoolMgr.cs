@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Text;
 using UnityEngine;
 using System.Threading.Tasks;
-using UnityEditor.iOS;
 using UnityEngine.Events;
 
 
